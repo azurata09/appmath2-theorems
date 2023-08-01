@@ -1,0 +1,104 @@
+\section{ベクトル方程式}
+
+\begin{theorem}
+  ベクトル$\vec a, \vec b$が垂直のとき，$\vec a \cdot \vec b = 0$である．
+\end{theorem}
+
+\begin{proof}
+  \[
+    \vec a \cdot \vec b = |\vec a| \, |\vec b| \cos \frac{\pi}{2} = 0 (\because \cos \frac{\pi}{2} = 0)
+  \]
+\end{proof}
+
+\begin{theorem}
+  $a, b, c$を定数とし，$xy$平面上において$ax + by = c$と表わされる直線$l$の単位法線ベクトルは，$\displaystyle (\pm \frac{a}{\sqrt{a^2 + b^2}}, \pm \frac{b}{\sqrt{a^2 + b^2}})$であり，原点からの距離は$\displaystyle \frac{|c|}{\sqrt{a^2 + b^2}}$である．
+\end{theorem}
+
+\begin{proof}
+  直線$l$の単位法線ベクトルを$\vec n = (n_x, n_y)$，原点からの距離を$\rho$，$l$上の動点$P$の位置ベクトルを$\vec r = (x, y)$とおくと，$\vec n \cdot \vec r = \rho$となる．
+
+  これを成分表示すると$n_x x + n_y y = \rho$であり，これはヘッセの標準形である．
+
+  ヘッセの標準形であるならば$||\vec n|| = 1$，つまり${n_x}^2 + {n_y}^2 = 1$である．これを$ax + by = c$と比較すると単位法線ベクトルは次の通りである．
+
+\[
+  (\pm \frac{a}{\sqrt{a^2 + b^2}}, \pm \frac{b}{\sqrt{a^2 + b^2}})
+\]
+
+  また，原点からの距離は次の通りである．
+
+\[
+  \frac{|c|}{\sqrt{a^2 + b^2}}
+\]
+
+\end{proof}
+
+ただし，これではあまりにもわかりづらいので，別の証明も記す．
+
+\begin{proof}
+  $ax + by = c$をヘッセの標準形に変換する．
+
+  例えば，$Ax + By = C$がヘッセの標準形であるとき，$A^2 + B^2 = 1$である\footnote{ヘッセの標準形は$x \cos\theta + y \sin\theta = 1$であるが，$\cos^2 \theta + \sin^2 \theta = 1$である．}．$a^2 + b^2 = M$とするとき，$M$を$1$にするには，両辺を$M$で割ればよい．つまり，次のようになる．
+
+  \[
+    a^2 + b^2 = M
+  \]
+  \[
+    \frac{a^2}{M} + \frac{b^2}{M} = 1
+  \]
+  \[
+    \frac{a^2}{a^2 + b^2} + \frac{b^2}{a^2 + b^2} = 1 (\because M = a^2 + b^2)
+  \]
+
+  すなわち，$ax + by = c$をヘッセの標準形に直すと次の通りである．
+
+  \[
+    \frac{a}{\sqrt{a^2 + b^2}} x + \frac{b}{\sqrt{a^2 + b^2}} y = \frac{c}{\sqrt{a^2 + b^2}}
+  \]
+
+  ヘッセの標準形$Ax + By = C$において，$A, B$はそれぞれ単位法線ベクトルの$x$成分$y$成分であるから，単位法線ベクトルは次の通りである．
+
+  \[
+    (\pm \frac{a}{\sqrt{a^2 + b^2}}, \pm \frac{b}{\sqrt{a^2 + b^2}})
+  \]
+
+  また，ヘッセの標準形$Ax + By = C$において，$C$は原点からの距離にあたるが，距離が$0$未満になることはありえないため，絶対値をつけて次の通りとなる．
+
+  \[
+    \frac{|c|}{\sqrt{a^2 + b^2}}
+  \]
+\end{proof}
+
+\begin{theorem}
+  $y = \alpha x$が$x$軸となす角は$\arctan \alpha$である．
+\end{theorem}
+
+\begin{proof}
+  $y=\tan\theta x$を下に図示する．
+
+  \begin{center}
+    \begin{tikzpicture}
+      % x軸
+      \draw[->,>=stealth,semithick](-2,0)--(2,0)node[above]{$x$};
+
+      % y軸
+      \draw[->,>=stealth,semithick](0,-1)--(0,3)node[right]{$y$};%y軸
+
+      % 原点
+      \draw(0,0)node[above left]{O};%原点
+
+
+      % 点(1, \tan\theta)
+      \draw(1,{sqrt(3)})node[right]{$(1, tan\theta)$};
+      \fill(1,{sqrt(3)})circle(2pt);%原点
+
+      \draw[dashed](1,0)--(1,{sqrt(3)});
+      \draw(1,{sqrt(3)/2})node[right]{$\tan\theta$};
+      \draw(1/2,0)node[below]{$1$};
+
+      % \draw plot(\x,{sqrt(3)\x});
+    \end{tikzpicture}
+  \end{center}
+
+  $\tan\theta = \alpha$とすると，$y = \alpha x$が$x$軸となす角は$\arctan \alpha$である．
+\end{proof}

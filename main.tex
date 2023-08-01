@@ -1,0 +1,34 @@
+\documentclass[
+  paper=a4,
+]{jlreq}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+% \usepackage{jlreq-trimmarks}
+\usepackage[dvipdfmx]{graphicx,xcolor}
+\usepackage{tikz}
+
+\pagestyle{empty}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{定理}
+\renewcommand{\proofname}{\textbf{証明}}
+
+\usetikzlibrary{intersections,calc,arrows.meta}
+
+\title{応用数学II 定理集}
+\author{\empty}
+\date{\empty}
+
+\begin{document}
+
+\maketitle
+
+\input{vector_equations}
+\input{transformation}
+\input{recurrence_least-squares}
+\input{network}
+\input{enumerative}
+
+\end{document}
